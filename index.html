@@ -5,48 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.JS Scaffold</title>
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/vue.global.3.2.47.js"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     
-    <!-- <div id="app">
-        <span>{{passphrase}}</span>
-        <br><br>
-        <label>v-model: <input v-model="passphrase"></label>
-        <br><br>
-        <button @click="cambioAwesome">awesome</button>
-        <br><br>
-
-
-        <div v-if="passphrase == 'milleniumfalcon'">
-            <img src="./img/rebel-logo.png" />
-
-            <ul>
-                <template v-for="ribelle in ribelli">
-                    <li>{{ ribelle }}</li>
-                </template>
-            </ul>
-
-        </div>
-        <span v-else>Qui nessun ribelle, siamo con l'impero.</span>
-
-    </div> -->
-
     <div id="app">
-        <img :src="movieLogo" v-bind:alt="movieName">
-
-        <div class="posters">
-            <template v-for="percorso in posters">
-                <img :src="percorso" v-bind:alt="movieName">
-            </template>
+        <h1 :class="(numero == 42) ? 'violet' : 'rosso' ">{{ titolo }}</h1>
+        <span :class="chiave">Percorso img interpolato: {{ "./img/" + nomeFileImg }}</span>
+        <br><br>
+        <label>Impero o ribellione? <input v-model="passphrase"> (v-model)</label>
+        <br><br>
+        <button @click="voltaGabbana()">Cliccami</button>
+        <br><br>
+        <br><br>
+        <div v-if="passphrase == 'ribellione'">
+            <!-- Viene creato/distrutto tutto il div, incluso il contenuto -->
+            <img :src="'img/'+nomeFileImg" alt="testo" >
+            <p>Che la forza sia con te (e con il tuo if)</p>
+            <input value="" placeholder="Scrivi qui un messaggio di cui non resterà traccia">
         </div>
-
-        <!-- <ul>
-            <li v-for="numero in numeroDiVolte">
-                {{numero}}
-            </li>
-        </ul> -->
+        <span v-else>Nessun ribelle qui, siamo con l'impero</span>
 
     </div>
 
@@ -54,7 +33,6 @@
 
 </body>
 </html>
-
 
 
 

@@ -22,3 +22,14 @@ a {
 img {
     width: 300px;
 }
+
+input {
+    width: 300px;
+}
+
+.rosso {
+    color: crimson;
+}
+.violet {
+    color: blueviolet
+}
