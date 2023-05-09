@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.JS Scaffold</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+    <!-- <div id="app">
+        <span>{{passphrase}}</span>
+        <br><br>
+        <label>v-model: <input v-model="passphrase"></label>
+        <br><br>
+        <button @click="cambioAwesome">awesome</button>
+        <br><br>
+
+
+        <div v-if="passphrase == 'milleniumfalcon'">
+            <img src="./img/rebel-logo.png" />
+
+            <ul>
+                <template v-for="ribelle in ribelli">
+                    <li>{{ ribelle }}</li>
+                </template>
+            </ul>
+
+        </div>
+        <span v-else>Qui nessun ribelle, siamo con l'impero.</span>
+
+    </div> -->
+
+    <div id="app">
+        <img :src="movieLogo" v-bind:alt="movieName">
+
+        <div class="posters">
+            <template v-for="percorso in posters">
+                <img :src="percorso" v-bind:alt="movieName">
+            </template>
+        </div>
+
+        <!-- <ul>
+            <li v-for="numero in numeroDiVolte">
+                {{numero}}
+            </li>
+        </ul> -->
+
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
